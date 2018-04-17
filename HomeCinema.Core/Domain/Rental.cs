@@ -11,7 +11,9 @@ namespace HomeCinema.Core.Domain
         public int CustomerId { get; set; }
         public int StockId { get; set; }
         public DateTime RentalDate { get; set; }
-        public DateTime? RetrunedDate { get; set; }
+        public DateTime? ReturnedDate { get; set; }
         public RentalStatus Status { get; set; }
+
+        public virtual Stock Stock { get; set; }
     }
 }
