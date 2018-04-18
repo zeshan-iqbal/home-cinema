@@ -14,8 +14,11 @@ namespace HomeCinema.Data.Mappings
         {
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id)
-                .ValueGeneratedOnAdd();
+                .ValueGeneratedOnAdd();           
+        }
 
+        public virtual void ConfigureAduitable(EntityTypeBuilder<T> builder)
+        {
             builder.Property(p => p.CreatedBy).IsRequired();
             builder.Property(p => p.CreatedDate).HasDefaultValue(DateTime.UtcNow).IsRequired();
 
@@ -24,7 +27,6 @@ namespace HomeCinema.Data.Mappings
 
             builder.Property(p => p.Deleted).HasDefaultValue(false);
             builder.Ignore(p => p.IsNew);
-
         }
     }
 }

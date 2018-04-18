@@ -23,7 +23,7 @@ namespace HomeCinema.Core.Domain
         public byte Rating { get; set; }
         public string TrailerUrl { get; set; }
 
-        public virtual Genre MyProperty { get; set; }
+        public virtual Genre Genre { get; set; }
         public virtual ICollection<Stock> Stocks { get; set; }
     }
 }

@@ -18,9 +18,16 @@ namespace HomeCinema.Data.Mappings
             builder.Property(s => s.UniqueKey).IsRequired();
             builder.Property(s => s.IsAvailable).IsRequired();
 
+            ConfigureAduitable(builder);
+
             builder.HasMany(s => s.Rentals)
                 .WithOne(r => r.Stock)
                 .HasForeignKey(r => r.StockId);
+
+            builder.HasOne(p => p.Movie)
+                .WithMany(s => s.Stocks)
+                .HasForeignKey(p => p.MovieId);
+            
         }
     }
 }

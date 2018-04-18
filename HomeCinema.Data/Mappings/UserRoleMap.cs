@@ -16,6 +16,8 @@ namespace HomeCinema.Data.Mappings
             builder.ToTable("UserRole");
             builder.Property(ur => ur.UserId).IsRequired();
             builder.Property(ur => ur.RoleId).IsRequired();
+
+            ConfigureAduitable(builder);
         }
     }
 }

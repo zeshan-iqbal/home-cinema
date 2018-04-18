@@ -23,6 +23,8 @@ namespace HomeCinema.Data.Mappings
             builder.Property(c => c.Email).IsRequired().HasMaxLength(200);
             builder.Property(c => c.DateOfBirth).IsRequired();
 
+            ConfigureAduitable(builder);
+
             builder.HasMany(c => c.Rentals)
                 .WithOne()
                 .HasForeignKey(r => r.CustomerId);

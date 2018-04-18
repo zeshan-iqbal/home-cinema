@@ -19,6 +19,8 @@ namespace HomeCinema.Data.Mappings
             builder.Property(r => r.StockId).IsRequired();
             builder.Property(r => r.Status).IsRequired().HasMaxLength(10);
             builder.Property(r => r.ReturnedDate).IsRequired(false);
+
+            ConfigureAduitable(builder);
         }
     }
 }

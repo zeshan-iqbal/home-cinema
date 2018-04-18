@@ -7,8 +7,17 @@ using System.Text;
 
 namespace HomeCinema.Data
 {
-    class HomeCinemaContext : DbContext
+    public class HomeCinemaContext : DbContext
     {
+        public HomeCinemaContext(DbContextOptions<HomeCinemaContext> options)
+            : base(options)
+        {}
+
+        public HomeCinemaContext()
+        {
+            //Default constructor for 
+        }
+
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Error> Errors { get; set; }
         public DbSet<Genre> Genres { get; set; }
@@ -18,6 +27,11 @@ namespace HomeCinema.Data
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {            
+            optionsBuilder.UseSqlServer(@"Server=NX00432\SQLEXPRESS;Database=HomeCinemaDb;Trusted_Connection=False;User Id=HomeCinemaDb;Password=word2pass;");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {            

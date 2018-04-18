@@ -17,6 +17,8 @@ namespace HomeCinema.Data.Mappings
 
             builder.Property(p => p.Message);
             builder.Property(p => p.StackTrace);
+
+            ConfigureAduitable(builder);
         }
     }
 }

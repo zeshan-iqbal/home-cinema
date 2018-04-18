@@ -17,6 +17,8 @@ namespace HomeCinema.Data.Mappings
             builder.Property(ur => ur.Name)
                 .IsRequired()
                 .HasMaxLength(50);
+
+            ConfigureAduitable(builder);
         }
     }
 }

@@ -20,6 +20,8 @@ namespace HomeCinema.Data.Mappings
             builder.Property(u => u.HashedPassword).IsRequired().HasMaxLength(200);
             builder.Property(u => u.Salt).IsRequired().HasMaxLength(200);
             builder.Property(u => u.IsLocked).IsRequired();
+
+            ConfigureAduitable(builder);
         }
     }
 }

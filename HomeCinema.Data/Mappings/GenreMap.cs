@@ -18,6 +18,8 @@ namespace HomeCinema.Data.Mappings
                 .IsRequired()
                 .HasMaxLength(50);
 
+            ConfigureAduitable(builder);
+
             builder.HasMany(p => p.Movies)
                 .WithOne()
                 .HasForeignKey(r => r.GenreId);

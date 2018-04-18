@@ -25,9 +25,15 @@ namespace HomeCinema.Data.Mappings
             builder.Property(m => m.Description).IsRequired().HasMaxLength(2000);
             builder.Property(m => m.TrailerUrl).HasMaxLength(200);
 
+            ConfigureAduitable(builder);
+
             builder.HasMany(m => m.Stocks)
                 .WithOne()
                 .HasForeignKey(s => s.MovieId);
+
+            builder.HasOne(m => m.Genre)
+                .WithMany(g => g.Movies)
+                .HasForeignKey(m => m.GenreId);
         }
     }
 }
