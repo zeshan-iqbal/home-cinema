@@ -11,7 +11,7 @@ using System;
 
 namespace HomeCinema.Data.Migrations
 {
-    [DbContext(typeof(HomeCinemaContext))]
+    [DbContext(typeof(HomeCinemaDbContext))]
     [Migration("20180418084533_InitialCreate")]
     partial class InitialCreate
     {

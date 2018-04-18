@@ -11,7 +11,7 @@ using System;
 
 namespace HomeCinema.Data.Migrations
 {
-    [DbContext(typeof(HomeCinemaContext))]
+    [DbContext(typeof(HomeCinemaDbContext))]
     partial class HomeCinemaContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

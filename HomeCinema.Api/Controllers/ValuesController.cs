@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HomeCinema.Core;
+using HomeCinema.Core.Domain;
+using HomeCinema.Data.Infrastructure.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HomeCinema.Api.Controllers
@@ -9,11 +12,19 @@ namespace HomeCinema.Api.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private IHomeCinemaDbContext ctx;
+
+        public ValuesController(IHomeCinemaDbContext ctx)
+        {
+            Guard.ArgumentIsNotNull(ctx, "ctx cannot be null.");
+            this.ctx = ctx;
+        }
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Genre> Get()
         {
-            return new string[] { "value1", "value2" };
+            return ctx.Set<Genre>().ToList();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
