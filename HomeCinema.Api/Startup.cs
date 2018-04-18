@@ -20,6 +20,10 @@ namespace HomeCinema.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            //https://jonhilton.net/2017/10/11/secure-your-asp.net-core-2.0-api-part-1---issuing-a-jwt/
+            //https://github.com/andychiare/netcore2-jwt
+            //https://auth0.com/blog/securing-asp-dot-net-core-2-applications-with-jwts/
         }
 
         public IConfiguration Configuration { get; }

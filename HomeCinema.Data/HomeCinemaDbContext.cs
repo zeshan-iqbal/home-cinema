@@ -15,7 +15,7 @@ namespace HomeCinema.Data
     {
         public HomeCinemaDbContext(DbContextOptions<HomeCinemaDbContext> options)
             : base(options)
-        { }
+        { }        
 
         public HomeCinemaDbContext()
         {
@@ -31,6 +31,12 @@ namespace HomeCinema.Data
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connection = @"Server=NX00432\SQLEXPRESS;Database=HomeCinemaDb;Trusted_Connection=False;User Id=HomeCinemaDb;Password=word2pass;";
+            optionsBuilder.UseSqlServer(connection);
+        }*/
 
         public override int SaveChanges()
         {
@@ -100,7 +106,7 @@ namespace HomeCinema.Data
             modelBuilder.ApplyConfiguration(new RoleMap());
             modelBuilder.ApplyConfiguration(new StockMap());
             modelBuilder.ApplyConfiguration(new UserMap());
-            modelBuilder.ApplyConfiguration(new UserRoleMap());
+            modelBuilder.ApplyConfiguration(new UserRoleMap());            
         }
     }
 }
