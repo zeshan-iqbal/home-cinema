@@ -1,4 +1,5 @@
 ﻿using HomeCinema.Core.Data;
+using HomeCinema.Core.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace HomeCinema.Data.Infrastructure.Contracts
 {
     public interface IHomeCinemaDbContext
-    {
+    {        
         ChangeTracker ChangeTracker { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
         DatabaseFacade Database { get; }
