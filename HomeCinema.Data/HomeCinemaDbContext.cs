@@ -32,11 +32,11 @@ namespace HomeCinema.Data
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var connection = @"Server=NX00432\SQLEXPRESS;Database=HomeCinemaDb;Trusted_Connection=False;User Id=HomeCinemaDb;Password=word2pass;";
-            optionsBuilder.UseSqlServer(connection);
-        }*/
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    var connection = @"Server=.\SQLEXPRESS;Database=HomeCinemaDb;Trusted_Connection=False;User Id=HomeCinemaDb;Password=word2pass;";
+        //    optionsBuilder.UseSqlServer(connection);
+        //}
 
         public override int SaveChanges()
         {
