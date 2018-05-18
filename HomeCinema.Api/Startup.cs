@@ -32,8 +32,8 @@ namespace HomeCinema.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var connection = @"Server=.\SQLEXPRESS;Database=HomeCinemaDb;Trusted_Connection=False;User Id=HomeCinemaDb;Password=word2pass;";
-            services.AddDbContext<HomeCinemaDbContext>(options => options.UseSqlServer(connection));
+            var connection = @"Server=.\SQLEXPRESS;Database=HomeCinemaDb;Trusted_Connection=False;User Id=HomeCinemaDb;Password=word2pass;";            
+            services.AddDbContext<HomeCinemaDbContext>(options => options.UseSqlServer(connection));            
             services.AddTransient<IHomeCinemaDbContext, HomeCinemaDbContext>();
             services.AddTransient<IHomeCinemaUnitOfWork, HomeCinemaUnitOfWork>();            
         }

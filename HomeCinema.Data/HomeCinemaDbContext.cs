@@ -52,8 +52,8 @@ namespace HomeCinema.Data
 
         private void SetAuditableProperties()
         {
-            const string Username = "sub";
-            const string UserId = "userId";
+            //const string Username = "sub";
+            //const string UserId = "userId";
             foreach (var auditableEntity in ChangeTracker.Entries<IAuditable>())
             {
                 if (auditableEntity.State == EntityState.Added ||
