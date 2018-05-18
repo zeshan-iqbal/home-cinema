@@ -75,7 +75,7 @@ namespace HomeCinema.Services.Services
                 }
             }
 
-            return roles;
+            return roles.Distinct().ToList();
         }
 
         public async Task<MembershipContext> ValidateUserAsync(string username, string password)
